@@ -186,7 +186,7 @@ Select-product uses two UI-originated hops instead: `GET /api/catalog/products/{
 | sales | catalog `:8080` | Service Connect `http://catalog:8080` |
 | ALB | catalog / sales | **Never** |
 
-REST shapes: [openapi.yaml](openapi.yaml). Swagger (via ALB): `/swagger/`.
+REST shapes: [openapi.yaml](openapi.yaml). Swagger (via ALB): `/swagger/`. How Connect is created: [service-connect-configuration.md](service-connect-configuration.md).
 
 ---
 

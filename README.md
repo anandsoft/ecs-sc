@@ -2,7 +2,7 @@
 
 One **ECS Fargate cluster**, **three services**, each running **one microservice**. **ALB** is attached to UI only. **ECS Service Connect with TLS** carries UI → catalog, UI → sales, and sales → catalog.
 
-How traffic moves: **[docs/alb-and-service-connect.md](docs/alb-and-service-connect.md)**. API contract: **[docs/openapi.yaml](docs/openapi.yaml)**. Swagger: `/swagger/` on the ALB (or [http://localhost:8080/swagger/](http://localhost:8080/swagger/) locally).
+How traffic moves: **[docs/alb-and-service-connect.md](docs/alb-and-service-connect.md)**. How Connect is wired in Terraform: **[docs/service-connect-configuration.md](docs/service-connect-configuration.md)**. API contract: **[docs/openapi.yaml](docs/openapi.yaml)**. Swagger: `/swagger/` on the ALB (or [http://localhost:8080/swagger/](http://localhost:8080/swagger/) locally).
 
 | | What |
 | --- | --- |
