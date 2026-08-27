@@ -1,0 +1,9 @@
+aws_region   = "us-east-1"
+aws_profile  = ""
+project_name = "ecs-sc"
+environment  = "dev"
+image_tag    = "latest"
+
+# Floor is 3, ceiling is 9 for every service.
+desired_count    = 3
+autoscaling_max  = 9

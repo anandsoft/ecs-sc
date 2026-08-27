@@ -1,0 +1,210 @@
+:root {
+  color-scheme: light;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  background: #f4efe6;
+  color: #1d1914;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.hero {
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: #6a5843;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.lede,
+.status {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: #5b4c3d;
+}
+
+.lede a {
+  color: #123524;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #fffaf3;
+  border: 1px solid #e4d8c6;
+  border-radius: 18px;
+  padding: 16px;
+  min-height: 220px;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  width: 100%;
+}
+
+.card.selected {
+  border-color: #123524;
+  box-shadow: 0 0 0 2px #123524;
+}
+
+.thumb,
+.hero-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.hero-image {
+  max-width: 220px;
+  margin: 0;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.category,
+.badge {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge {
+  background: #123524;
+  color: #f4efe6;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.price {
+  margin-top: 16px !important;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.list {
+  text-decoration: line-through;
+  color: #8a7a68;
+}
+
+.error {
+  color: #8b1e1e;
+}
+
+.muted {
+  color: #8a7a68;
+}
+
+.ok {
+  color: #123524;
+}
+
+.checkout {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) 1fr;
+  gap: 24px;
+  align-items: start;
+  background: #fffaf3;
+  border: 1px solid #e4d8c6;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.buy-row {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  margin-top: 16px;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.buy-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.buy-row input {
+  width: 72px;
+  padding: 8px;
+  border: 1px solid #e4d8c6;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.buy {
+  background: #123524;
+  color: #f4efe6;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.buy:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.orders {
+  margin-top: 32px;
+}
+
+.orders ul {
+  padding-left: 18px;
+}
+
+@media (max-width: 700px) {
+  .checkout {
+    grid-template-columns: 1fr;
+  }
+}

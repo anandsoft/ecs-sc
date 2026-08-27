@@ -1,0 +1,55 @@
+services:
+  catalog:
+    build:
+      context: ./apps/catalog
+      dockerfile: Dockerfile
+    hostname: catalog
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 8
+    networks:
+      store:
+        aliases: [catalog]
+
+  sales:
+    build:
+      context: ./apps/sales
+      dockerfile: Dockerfile
+    hostname: sales
+    environment:
+      CATALOG_BASE_URL: http://catalog:8080
+    depends_on:
+      catalog:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 8
+    networks:
+      store:
+        aliases: [sales]
+
+  ui:
+    build:
+      context: ./apps/ui
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      CATALOG_HOST: catalog
+      CATALOG_PORT: "8080"
+      SALES_HOST: sales
+      SALES_PORT: "8080"
+    depends_on:
+      catalog:
+        condition: service_healthy
+      sales:
+        condition: service_healthy
+    networks:
+      - store
+
+networks:
+  store:
